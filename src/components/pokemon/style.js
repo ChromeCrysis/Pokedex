@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 export const Sprite = styled.img`
   width: 8em;
@@ -22,4 +23,16 @@ export const Card = styled.div`
     max-width: 2em;
   }
 
+`
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
 `

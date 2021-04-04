@@ -8,7 +8,7 @@ import Spinner from '../pokemon/assets/spinner.gif'
 
 export default class PokemonList extends Component {
   state = {
-    url: 'https://pokeapi.co/api/v2/pokemon/',
+    url: 'https://pokeapi.co/api/v2/pokemon?limit=1118/',
     pokemon: null,
   };
 
@@ -33,8 +33,8 @@ export default class PokemonList extends Component {
           </div>
           </div>
         ) : (
-          <div className="mx-auto center">
-            <img src={Spinner} style={{width: '20em', height: '20em'}}/>
+          <div className="mx-auto mt-lg-2">
+            <h1>Loading Pokemons...</h1>
           </div>
         )}
       </div>

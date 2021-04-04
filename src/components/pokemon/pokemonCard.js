@@ -1,5 +1,6 @@
 //Imports do react ou libs
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 //Import de components
 import * as S from '../pokemon/style'
@@ -33,6 +34,7 @@ export default class PokemonCard extends Component{
   render(){
     return (
       <div className="col-md-3 col-sm-6 mb-5">
+        <S.StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
         <S.Card className="card">
           <div className="card-header">
             <div className="row">
@@ -69,6 +71,7 @@ export default class PokemonCard extends Component{
             </div>
           </div>
         </S.Card>
+        </S.StyledLink>
       </div>
     )
   }
