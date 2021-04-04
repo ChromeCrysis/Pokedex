@@ -131,7 +131,7 @@ export default class Pokemon extends Component {
         })
         .join(', ');
   
-      // Get Pokemon Description .... Is from a different end point uggh
+      // Recebe a descrição do pokemon da outra Url com dados da Espécie
       await axios.get(pokemonSpeciesUrl).then(res => {
         let description = '';
         res.data.flavor_text_entries.some(flavor => {
@@ -140,8 +140,10 @@ export default class Pokemon extends Component {
             return;
           }
         });
+        //Porcentagem do pokemon ser fêmea
         const femaleRate = res.data['gender_rate'];
         const genderRatioFemale = 12.5 * femaleRate;
+        //Porcentagem do pokemon ser macho
         const genderRatioMale = 12.5 * (8 - femaleRate);
   
         const catchRate = Math.round((100 / 255) * res.data['capture_rate']);
@@ -157,7 +159,7 @@ export default class Pokemon extends Component {
           .join(', ');
   
         const hatchSteps = 255 * (res.data['hatch_counter'] + 1);
-  
+          
         this.setState({
           description,
           genderRatioFemale,
